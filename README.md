@@ -39,7 +39,7 @@ This program shows how shared memory is used to allow multiple processes to perf
 * Child process executes the remaining functions. The child processes increment using the array of incrementing values. Each child increments once with a specific value in the increment values array. After the process, each child will print its output as the total value after incrementing. 
 
 ### Parent process
-The parent waits for the children to finish executing before continuing using the **wait()** function. The parent process records the process IDs of the children while waiting and prints them once done.
+* The parent waits for the children to finish executing before continuing using the **wait()** function. The parent process records the process IDs of the children while waiting and prints them once done.
 
 ### Shared memory cleanup
 * Once all the processes have finished executing, the shared memory is detached and removed using the **shmdt()** function and **shmctl** function to clean up the resources used.
