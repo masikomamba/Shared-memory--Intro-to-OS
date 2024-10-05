@@ -1,12 +1,12 @@
 # Shared-memory--Intro-to-OS
 
-##Shared memory
+## Shared memory
 
 ### overview
 
 This program shows how shared memory is used to allow multiple processes to perform operations on a shared variable. The shared memory is created by the parent process, child processes are created using the fork function and they increment the shared variable. The parent process waits for all children to finish executing and then detaches from the shared memory and prints the results. 
 
-###Requirements
+### Requirements
 
 * This program must be run on a Linux system
 * Libraries: POSIX shared memory
