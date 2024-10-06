@@ -50,10 +50,10 @@ int main() {
         }
    return 1;
    }*/
-
+ //fork processes
   for (int i = 0; i < 4; i++) {
-        pid_t pid = fork();
-        if (pid == 0) {
+        pid_t pid = fork(); // create four child processes
+        if (pid == 0) { // let child process execute the following code
             int increments[] = { 100000, 200000, 300000, 500000 };
             int increment_value = increments[i];
             int process_number = i;
@@ -71,7 +71,7 @@ int main() {
         perror("shmdt");
         return 1;
     }
-
+ //remove shared memory
     if (shmctl(shmid, IPC_RMID, NULL) == -1) {
         perror("shmctl");
         return 1;
@@ -84,7 +84,7 @@ int main() {
     }
     
     printf("\n");
-
+ //parent process prints everytime a child process finishes execution
     for(int i = 0; i<4; i++){
         printf("Child with ID: %d has just exited.\n", childProcess_pid+i);
     }
